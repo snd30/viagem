@@ -1,0 +1,830 @@
+
+:root {
+    --verde: #246b50;
+    --verde-escuro: #174936;
+    --verde-claro: #e8f2eb;
+    --laranja: #e99b61;
+    --fundo: #fbfaf7;
+    --branco: #ffffff;
+    --texto: #26372e;
+    --cinza: #758078;
+    --borda: #e6e9e3;
+    --sombra: 0 12px 35px rgba(34, 65, 47, 0.08);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+body {
+    background: var(--fundo);
+    color: var(--texto);
+    font-family: "DM Sans", sans-serif;
+    line-height: 1.6;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button, input, select, textarea {
+    font: inherit;
+}
+
+button, a, select {
+    -webkit-tap-highlight-color: transparent;
+}
+
+button {
+    cursor: pointer;
+}
+
+button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.topo {
+    min-height: 82px;
+    padding: 16px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+    background: var(--branco);
+    border-bottom: 1px solid var(--borda);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: "Outfit", sans-serif;
+    font-size: 22px;
+    font-weight: 800;
+    white-space: nowrap;
+}
+
+.logo-icone {
+    display: grid;
+    place-items: center;
+    width: 37px;
+    height: 37px;
+    background: var(--verde);
+    color: white;
+    border-radius: 12px;
+    font-size: 22px;
+}
+
+.logo-destaque {
+    color: var(--verde);
+}
+
+.topo nav {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.topo nav a {
+    color: #5f6b63;
+    font-size: 14px;
+    transition: color 0.2s;
+}
+
+.topo nav a:hover {
+    color: var(--verde);
+}
+
+.botao-topo {
+    padding: 11px 18px;
+    background: var(--verde);
+    color: white;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 55px;
+    padding: 75px 8% 85px;
+    overflow: hidden;
+}
+
+.hero-conteudo {
+    max-width: 560px;
+}
+
+.etiqueta {
+    display: inline-block;
+    color: var(--verde);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 16px;
+}
+
+.hero h1 {
+    font-family: "Outfit", sans-serif;
+    font-size: clamp(38px, 4.5vw, 64px);
+    line-height: 1.12;
+    letter-spacing: -1.8px;
+    font-weight: 800;
+}
+
+.hero h1 span {
+    color: var(--verde);
+}
+
+.hero-conteudo > p {
+    margin-top: 22px;
+    color: var(--cinza);
+    max-width: 430px;
+    font-size: 15px;
+}
+
+.botao-principal {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: var(--verde);
+    color: white;
+    border: 1px solid var(--verde);
+    padding: 13px 20px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 14px;
+    transition: 0.2s;
+}
+
+.botao-principal:hover {
+    background: var(--verde-escuro);
+    transform: translateY(-1px);
+}
+
+.hero-conteudo > .botao-principal {
+    margin-top: 28px;
+}
+
+.hero-numeros {
+    display: flex;
+    gap: 45px;
+    margin-top: 40px;
+}
+
+.hero-numeros div {
+    display: flex;
+    flex-direction: column;
+}
+
+.hero-numeros strong {
+    font-family: "Outfit", sans-serif;
+    font-size: 27px;
+    color: var(--verde);
+}
+
+.hero-numeros span {
+    font-size: 12px;
+    color: var(--cinza);
+}
+
+.hero-imagem {
+    position: relative;
+    min-height: 390px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.foto-principal {
+    width: 100%;
+    height: 390px;
+    border-radius: 46% 46% 16px 16px;
+    background:
+        linear-gradient(180deg, rgba(19, 47, 35, 0.02), rgba(19, 47, 35, 0.15)),
+        url("https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1100&q=85")
+        center / cover;
+    position: relative;
+    z-index: 1;
+}
+
+.circulo-decorativo {
+    position: absolute;
+    width: 160px;
+    height: 160px;
+    border: 2px solid var(--laranja);
+    border-radius: 50%;
+    right: -25px;
+    top: -20px;
+}
+
+.cartao-flutuante {
+    position: absolute;
+    z-index: 2;
+    bottom: 24px;
+    left: -28px;
+    display: flex;
+    gap: 14px;
+    align-items: center;
+    padding: 17px 20px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: var(--sombra);
+}
+
+.globo {
+    width: 42px;
+    height: 42px;
+    display: grid;
+    place-items: center;
+    border-radius: 12px;
+    background: var(--verde-claro);
+    color: var(--verde);
+    font-size: 25px;
+}
+
+.cartao-flutuante strong {
+    font-size: 13px;
+}
+
+.cartao-flutuante p {
+    font-size: 11px;
+    color: var(--cinza);
+}
+
+.beneficios {
+    padding: 32px 8%;
+    background: var(--verde-escuro);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    color: white;
+}
+
+.beneficio {
+    display: flex;
+    gap: 17px;
+    align-items: flex-start;
+}
+
+.beneficio > span {
+    font-family: "Outfit", sans-serif;
+    color: #c7dfc9;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.beneficio strong {
+    font-size: 14px;
+}
+
+.beneficio p {
+    font-size: 12px;
+    color: #cbd8ce;
+    margin-top: 4px;
+}
+
+.secao-destinos {
+    padding: 85px 8%;
+}
+
+.titulo-secao {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.titulo-secao h2,
+.cadastro-texto h2,
+.clima-intro h2 {
+    font-family: "Outfit", sans-serif;
+    font-size: clamp(30px, 3vw, 43px);
+    line-height: 1.2;
+    letter-spacing: -1px;
+}
+
+.titulo-secao p,
+.clima-intro > p {
+    color: var(--cinza);
+    margin-top: 9px;
+    font-size: 14px;
+}
+
+.barra-filtros {
+    display: flex;
+    gap: 15px;
+    margin: 30px 0 25px;
+}
+
+.campo-busca {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: white;
+    border: 1px solid var(--borda);
+    padding: 0 15px;
+    border-radius: 9px;
+}
+
+.campo-busca span {
+    font-size: 24px;
+    color: var(--cinza);
+}
+
+.campo-busca input {
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 13px 0;
+    background: transparent;
+}
+
+.barra-filtros select {
+    min-width: 170px;
+}
+
+input, select, textarea {
+    color: var(--texto);
+}
+
+.barra-filtros select,
+.formulario input,
+.formulario select,
+.formulario textarea,
+.form-clima input {
+    background: white;
+    border: 1px solid var(--borda);
+    border-radius: 8px;
+    padding: 12px 13px;
+    outline: none;
+    width: 100%;
+}
+
+input:focus, select:focus, textarea:focus {
+    border-color: var(--verde);
+    box-shadow: 0 0 0 3px rgba(36, 107, 80, 0.08);
+}
+
+.mensagem {
+    color: var(--cinza);
+    font-size: 13px;
+    margin: 14px 0;
+}
+
+.mensagem:empty {
+    display: none;
+}
+
+.grade-destinos {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 23px;
+}
+
+.destino-card {
+    background: white;
+    border: 1px solid var(--borda);
+    border-radius: 13px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(34, 65, 47, 0.03);
+    transition: transform 0.2s, box-shadow 0.2s;
+    min-width: 0;
+}
+
+.destino-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--sombra);
+}
+
+.destino-capa {
+    min-height: 155px;
+    padding: 17px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    background:
+        linear-gradient(180deg, rgba(16, 43, 31, 0.03), rgba(16, 43, 31, 0.45)),
+        url("https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=700&q=80")
+        center / cover;
+}
+
+.destino-capa span {
+    background: rgba(255, 255, 255, 0.94);
+    color: var(--verde);
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.destino-corpo {
+    padding: 20px;
+}
+
+.destino-corpo h3 {
+    font-family: "Outfit", sans-serif;
+    font-size: 23px;
+    overflow-wrap: anywhere;
+}
+
+.destino-pais {
+    color: var(--cinza);
+    font-size: 13px;
+}
+
+.estrelas {
+    color: #dc9840;
+    letter-spacing: 2px;
+    font-size: 14px;
+    margin: 12px 0;
+}
+
+.destino-comentario {
+    color: #66736a;
+    font-size: 13px;
+    min-height: 43px;
+    overflow-wrap: anywhere;
+    white-space: pre-wrap;
+}
+
+.destino-clima {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    color: var(--verde);
+    background: var(--verde-claro);
+    padding: 10px 12px;
+    border-radius: 7px;
+    font-size: 12px;
+    margin-top: 16px;
+}
+
+.destino-acoes {
+    display: flex;
+    gap: 9px;
+    margin-top: 16px;
+}
+
+.botao-editar,
+.botao-excluir {
+    flex: 1;
+    padding: 9px 8px;
+    border-radius: 7px;
+    font-size: 12px;
+    font-weight: 700;
+    border: 1px solid var(--borda);
+    background: white;
+}
+
+.botao-editar {
+    color: var(--verde);
+}
+
+.botao-editar:hover {
+    background: var(--verde-claro);
+}
+
+.botao-excluir {
+    color: #b64040;
+}
+
+.botao-excluir:hover {
+    background: #fff0f0;
+}
+
+.vazio {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 45px 20px;
+    background: white;
+    border: 1px dashed #cbd8ce;
+    border-radius: 12px;
+}
+
+.vazio h3 {
+    font-family: "Outfit", sans-serif;
+    font-size: 22px;
+}
+
+.vazio p {
+    color: var(--cinza);
+    font-size: 13px;
+    margin-top: 8px;
+}
+
+.secao-cadastro {
+    padding: 75px 8%;
+    background: #edf2eb;
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 75px;
+    align-items: center;
+}
+
+.cadastro-texto h2 {
+    font-size: clamp(36px, 4vw, 49px);
+}
+
+.cadastro-texto > p {
+    color: #6b786d;
+    margin-top: 18px;
+    max-width: 420px;
+    font-size: 14px;
+}
+
+.dica {
+    display: flex;
+    gap: 12px;
+    margin-top: 32px;
+    max-width: 400px;
+    padding: 17px;
+    background: white;
+    border-radius: 10px;
+}
+
+.dica > span {
+    color: var(--laranja);
+    font-size: 23px;
+}
+
+.dica p {
+    font-size: 12px;
+    color: #68756b;
+}
+
+.formulario {
+    background: white;
+    padding: 32px;
+    border-radius: 14px;
+    box-shadow: var(--sombra);
+}
+
+.formulario h3 {
+    font-family: "Outfit", sans-serif;
+    font-size: 25px;
+}
+
+.subtitulo-form {
+    color: var(--cinza);
+    font-size: 13px;
+    margin: 3px 0 23px;
+}
+
+.formulario label {
+    display: block;
+    font-size: 12px;
+    font-weight: 700;
+    margin: 16px 0 7px;
+}
+
+.formulario textarea {
+    resize: vertical;
+}
+
+.botoes-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 23px;
+}
+
+.botoes-form .botao-principal {
+    flex: 1;
+}
+
+.botao-cancelar {
+    background: white;
+    border: 1px solid var(--borda);
+    padding: 12px 15px;
+    border-radius: 8px;
+    color: var(--texto);
+    font-weight: 600;
+}
+
+.nota-form {
+    color: var(--cinza);
+    font-size: 11px;
+    margin-top: 15px;
+}
+
+.secao-clima {
+    padding: 80px 8%;
+    text-align: center;
+}
+
+.clima-intro {
+    max-width: 620px;
+    margin: 0 auto;
+}
+
+.form-clima {
+    display: flex;
+    gap: 10px;
+    max-width: 540px;
+    margin: 28px auto;
+}
+
+.form-clima input {
+    flex: 1;
+    min-width: 0;
+}
+
+.resultado-clima {
+    max-width: 540px;
+    margin: 0 auto;
+    color: var(--cinza);
+    font-size: 13px;
+}
+
+.cartao-clima {
+    padding: 25px;
+    background: white;
+    border: 1px solid var(--borda);
+    border-radius: 13px;
+    box-shadow: var(--sombra);
+}
+
+.cartao-clima h3 {
+    font-family: "Outfit", sans-serif;
+    font-size: 23px;
+}
+
+.temperatura {
+    font-family: "Outfit", sans-serif;
+    font-size: 48px;
+    font-weight: 800;
+    color: var(--verde);
+    margin: 5px 0;
+}
+
+.detalhes-clima {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 15px;
+}
+
+footer {
+    background: var(--verde-escuro);
+    color: white;
+    padding: 32px 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.logo-footer .logo-icone {
+    background: white;
+    color: var(--verde);
+}
+
+.logo-footer .logo-destaque {
+    color: #a9d1b4;
+}
+
+footer p,
+footer > span {
+    font-size: 12px;
+    color: #cbd8ce;
+}
+
+@media (max-width: 1000px) {
+    .topo {
+        padding: 15px 4%;
+    }
+
+    .topo nav {
+        gap: 15px;
+    }
+
+    .hero, .secao-cadastro {
+        padding-left: 5%;
+        padding-right: 5%;
+        gap: 35px;
+    }
+
+    .secao-destinos, .secao-clima {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .grade-destinos {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .beneficios {
+        padding-left: 5%;
+        padding-right: 5%;
+        gap: 18px;
+    }
+}
+
+@media (max-width: 700px) {
+    .topo {
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .topo nav {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .topo nav a {
+        font-size: 12px;
+    }
+
+    .botao-topo {
+        font-size: 11px;
+        padding: 9px 12px;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        padding-top: 50px;
+        gap: 35px;
+    }
+
+    .hero-imagem {
+        min-height: 300px;
+    }
+
+    .foto-principal {
+        height: 300px;
+    }
+
+    .cartao-flutuante {
+        left: 0;
+    }
+
+    .circulo-decorativo {
+        right: -8px;
+        width: 100px;
+        height: 100px;
+    }
+
+    .beneficios {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .secao-destinos {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+
+    .titulo-secao {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .barra-filtros {
+        flex-direction: column;
+    }
+
+    .grade-destinos {
+        grid-template-columns: 1fr;
+    }
+
+    .secao-cadastro {
+        grid-template-columns: 1fr;
+        padding-top: 55px;
+        padding-bottom: 55px;
+        gap: 30px;
+    }
+
+    .formulario {
+        padding: 23px;
+    }
+
+    .form-clima {
+        flex-direction: column;
+    }
+
+    footer {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}

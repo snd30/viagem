@@ -1,0 +1,191 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Organize suas viagens e descubra o clima dos seus destinos.">
+    <title>RotaMundo | Guia de Viagens</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script type="module" src="script.js"></script>
+</head>
+<body>
+
+    <header class="topo">
+        <a href="#" class="logo">
+            <span class="logo-icone">R</span>
+            <span>Rota<span class="logo-destaque">Mundo</span></span>
+        </a>
+
+        <nav>
+            <a href="#inicio">Início</a>
+            <a href="#destinos">Meus destinos</a>
+            <a href="#cadastro">Adicionar viagem</a>
+        </nav>
+
+        <a href="#cadastro" class="botao-topo">Planejar viagem +</a>
+    </header>
+
+    <main>
+        <section class="hero" id="inicio">
+            <div class="hero-conteudo">
+                <span class="etiqueta">SEU PRÓXIMO DESTINO COMEÇA AQUI</span>
+                <h1>O mundo é grande.<br>Seu próximo destino<br><span>está esperando.</span></h1>
+                <p>Organize suas viagens, registre seus lugares favoritos e descubra o clima de cada destino.</p>
+                <a href="#destinos" class="botao-principal">Explorar meus destinos →</a>
+
+                <div class="hero-numeros">
+                    <div>
+                        <strong id="totalDestinos">0</strong>
+                        <span>Destinos salvos</span>
+                    </div>
+                    <div>
+                        <strong>∞</strong>
+                        <span>Possibilidades</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-imagem">
+                <div class="foto-principal"></div>
+                <div class="cartao-flutuante">
+                    <span class="globo">✦</span>
+                    <div>
+                        <strong>Seu diário de viagens</strong>
+                        <p>Descubra. Planeje. Explore.</p>
+                    </div>
+                </div>
+                <div class="circulo-decorativo"></div>
+            </div>
+        </section>
+
+        <section class="beneficios">
+            <div class="beneficio">
+                <span>01</span>
+                <div>
+                    <strong>Organize suas viagens</strong>
+                    <p>Guarde cidades, notas e comentários.</p>
+                </div>
+            </div>
+            <div class="beneficio">
+                <span>02</span>
+                <div>
+                    <strong>Descubra o clima</strong>
+                    <p>Consulte a temperatura dos destinos.</p>
+                </div>
+            </div>
+            <div class="beneficio">
+                <span>03</span>
+                <div>
+                    <strong>Planeje suas aventuras</strong>
+                    <p>Tenha seus planos em um só lugar.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="secao-destinos" id="destinos">
+            <div class="titulo-secao">
+                <div>
+                    <span class="etiqueta">SUA COLEÇÃO PESSOAL</span>
+                    <h2>Meus destinos</h2>
+                    <p>Todos os lugares que você deseja conhecer.</p>
+                </div>
+                <a href="#cadastro" class="botao-principal">+ Novo destino</a>
+            </div>
+
+            <div class="barra-filtros">
+                <div class="campo-busca">
+                    <span>⌕</span>
+                    <input type="search" id="pesquisa" placeholder="Buscar cidade ou país...">
+                </div>
+
+                <select id="filtroNota" aria-label="Filtrar por nota">
+                    <option value="">Todas as notas</option>
+                    <option value="5">5 estrelas</option>
+                    <option value="4">4 estrelas ou mais</option>
+                    <option value="3">3 estrelas ou mais</option>
+                    <option value="2">2 estrelas ou mais</option>
+                    <option value="1">1 estrela ou mais</option>
+                </select>
+            </div>
+
+            <div id="mensagem" class="mensagem" role="status">Conectando ao banco de dados...</div>
+            <div id="listaDestinos" class="grade-destinos"></div>
+        </section>
+
+        <section class="secao-cadastro" id="cadastro">
+            <div class="cadastro-texto">
+                <span class="etiqueta">TIRE OS PLANOS DO PAPEL</span>
+                <h2>Qual será sua<br>próxima aventura?</h2>
+                <p>Adicione um destino à sua coleção. Registre suas expectativas, dê uma nota e comece a planejar.</p>
+
+                <div class="dica">
+                    <span>✦</span>
+                    <p>Uma viagem começa muito antes de fazer as malas. Começa com um sonho.</p>
+                </div>
+            </div>
+
+            <form id="formDestino" class="formulario">
+                <input type="hidden" id="destinoId">
+
+                <h3 id="tituloFormulario">Adicionar destino</h3>
+                <p class="subtitulo-form">Preencha os dados da sua próxima viagem.</p>
+
+                <label for="cidade">Cidade *</label>
+                <input type="text" id="cidade" placeholder="Ex.: Paris" required maxlength="100">
+
+                <label for="pais">País *</label>
+                <input type="text" id="pais" placeholder="Ex.: França" required maxlength="100">
+
+                <label for="nota">Quanto você quer conhecer este lugar?</label>
+                <select id="nota">
+                    <option value="5">★★★★★ — Sonho de viagem</option>
+                    <option value="4">★★★★☆ — Quero muito conhecer</option>
+                    <option value="3">★★★☆☆ — Tenho interesse</option>
+                    <option value="2">★★☆☆☆ — Talvez um dia</option>
+                    <option value="1">★☆☆☆☆ — Pouca prioridade</option>
+                </select>
+
+                <label for="comentario">Anotações pessoais</label>
+                <textarea id="comentario" rows="4" maxlength="1000" placeholder="O que você gostaria de conhecer? Pontos turísticos, experiências, planejamento..."></textarea>
+
+                <div class="botoes-form">
+                    <button type="submit" class="botao-principal" id="botaoSalvar">Salvar destino →</button>
+                    <button type="button" id="botaoCancelar" class="botao-cancelar" hidden>Cancelar edição</button>
+                </div>
+
+                <p class="nota-form">* Campos obrigatórios. Os destinos são salvos no Firestore.</p>
+            </form>
+        </section>
+
+        <section class="secao-clima" id="clima">
+            <div class="clima-intro">
+                <span class="etiqueta">INFORMAÇÕES EM TEMPO REAL</span>
+                <h2>Como está o tempo por lá?</h2>
+                <p>Consulte as condições meteorológicas de uma cidade usando a API Open-Meteo.</p>
+            </div>
+
+            <form id="formClima" class="form-clima">
+                <input type="text" id="cidadeClima" placeholder="Digite uma cidade..." required>
+                <button type="submit" class="botao-principal">Consultar clima</button>
+            </form>
+
+            <div id="resultadoClima" class="resultado-clima" aria-live="polite">
+                <p>Pesquise uma cidade para consultar a temperatura atual.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <a href="#inicio" class="logo logo-footer">
+            <span class="logo-icone">R</span>
+            <span>Rota<span class="logo-destaque">Mundo</span></span>
+        </a>
+        <p>Explore o mundo, uma viagem de cada vez.</p>
+        <span>Projeto acadêmico • HTML, CSS, JavaScript, Firestore e Open-Meteo</span>
+    </footer>
+
+</body>
+</html>
